@@ -269,14 +269,10 @@
             <!-- VIEW: Grand Hall -->
             <main id="view-grand-hall" class="hidden absolute inset-0 p-4 flex flex-col gap-6 scroll-container screen-transition max-w-md mx-auto w-full">
                 <div class="pb-40 w-full flex flex-col gap-4 mt-4">
-                    <div class="grid grid-cols-2 gap-4 shrink-0">
+                    <div class="grid grid-cols-1 gap-4 shrink-0">
                         <div onclick="window.navigateTo('instruction-room')" class="menu-card h-32 flex flex-col items-center justify-center text-center p-3 group" style="background: rgba(20, 10, 10, 0.75); backdrop-filter: blur(8px); border: 1px solid rgba(197, 160, 89, 0.4); border-radius: 8px; cursor: pointer;">
                             <i class="fa-solid fa-book-bible text-2xl text-[#C5A059] mb-2 drop-shadow-md group-hover:scale-110 transition-transform"></i>
                             <h3 class="text-xs font-bold text-[#e0d0c0] leading-tight font-cinzel uppercase tracking-wide">Sala de<br>Instrucción</h3>
-                        </div>
-                        <div onclick="window.navigateTo('library-room')" class="menu-card h-32 flex flex-col items-center justify-center text-center p-3 group" style="background: rgba(20, 10, 10, 0.75); backdrop-filter: blur(8px); border: 1px solid rgba(197, 160, 89, 0.4); border-radius: 8px; cursor: pointer;">
-                            <i class="fa-solid fa-church text-2xl text-[#C5A059] mb-2 drop-shadow-md group-hover:scale-110 transition-transform"></i>
-                            <h3 class="text-xs font-bold text-[#e0d0c0] leading-tight font-cinzel uppercase tracking-wide">Biblioteca<br>Católica</h3>
                         </div>
                     </div>
                     <div onclick="window.navigateTo('battle-selection')" class="menu-card card-battle-featured h-60 rounded-lg flex items-center justify-center relative group shrink-0 overflow-hidden p-4" style="background: linear-gradient(145deg, rgba(62, 34, 25, 0.85), rgba(30, 15, 11, 0.95)); border: 2px solid #8b5a2b; cursor: pointer;">
@@ -338,28 +334,6 @@
                     <p class="text-[#e0d0c0] font-serif text-lg max-w-md mb-8">
                         La Sala de Instrucción está en actualización.<br>
                         Pronto estará disponible nuevamente con nuevos contenidos para tu batalla espiritual.
-                    </p>
-                    
-                    <button onclick="window.navigateTo('battle-selection')" class="px-8 py-3 bg-gradient-to-r from-[#700F14] to-[#500a0e] text-[#F4F0EC] font-cinzel font-bold text-sm rounded border border-[#8a6e2f] shadow-lg hover:scale-105 transition-transform flex items-center gap-2">
-                        <i class="fa-solid fa-arrow-right"></i> IR A LA ORACIÓN DEL SANTO ROSARIO
-                    </button>
-                </div>
-            </main>
-
-            <!-- VIEW: LIBRARY ROOM -->
-            <main id="view-library-room" class="hidden absolute inset-0 bg-[#1a0f0c] z-40 flex flex-col items-center justify-center text-center p-6 screen-transition w-full">
-                <div class="absolute top-0 left-0 w-full p-4 z-20 flex justify-between items-center">
-                    <button onclick="window.navigateTo('grand-hall')" class="text-[#C5A059] text-xl drop-shadow-md"><i class="fa-solid fa-arrow-left"></i> Volver</button>
-                    <div class="text-[#C5A059] font-cinzel font-bold text-lg tracking-widest drop-shadow-md">BIBLIOTECA</div>
-                    <div class="w-10"></div>
-                </div>
-                
-                <div class="flex flex-col items-center justify-center h-full">
-                    <i class="fa-solid fa-book-bible text-6xl text-[#C5A059] mb-6 opacity-50"></i>
-                    <h2 class="text-2xl font-cinzel text-[#C5A059] mb-4">En Actualización</h2>
-                    <p class="text-[#e0d0c0] font-serif text-lg max-w-md mb-8">
-                        La Biblioteca Católica está en actualización.<br>
-                        Pronto estará disponible con acervo espiritual para tus estudios.
                     </p>
                     
                     <button onclick="window.navigateTo('battle-selection')" class="px-8 py-3 bg-gradient-to-r from-[#700F14] to-[#500a0e] text-[#F4F0EC] font-cinzel font-bold text-sm rounded border border-[#8a6e2f] shadow-lg hover:scale-105 transition-transform flex items-center gap-2">
@@ -582,7 +556,7 @@
         }
 
         window.navigateTo = function(screenId) {
-            const views = ['view-grand-hall', 'view-battle-selection', 'view-instruction-room', 'view-instruction-detail', 'view-prayer', 'view-library-room', 'view-login', 'view-register'];
+            const views = ['view-grand-hall', 'view-battle-selection', 'view-instruction-room', 'view-instruction-detail', 'view-prayer', 'view-login', 'view-register'];
             views.forEach(id => {
                 const el = document.getElementById(id);
                 if(el && id !== 'view-login') el.classList.add('hidden'); 
